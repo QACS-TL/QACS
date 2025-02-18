@@ -1,17 +1,17 @@
 ﻿using ZooTzarLibrary;
 
 Animal animal = new Animal();
-animal.name = "Bonzo";
-animal.age = 2;
-animal.limbCount = 4;
+animal.Name = "Bonzo";
+animal.Age = 2;
+animal.LimbCount = -4;
 
 Animal animal1 = new Animal();
-animal1.name = "Fifi";
-animal1.age = 3;
-animal1.limbCount = 6;
+animal1.Name = "Fifi";
+animal1.Age = 3;
+animal1.LimbCount = -123;
 
-Console.WriteLine($"I'm an animal called {animal.name}. I am {animal.age} years old and I have {animal.limbCount} limbs.");
-Console.WriteLine($"I'm an animal called {animal1.name}. I am {animal1.age} years old and I have {animal1.limbCount} limbs.");
+Console.WriteLine($"I'm an animal called {animal.Name}. I am {animal.Age} years old and I have {animal.LimbCount} limbs.");
+Console.WriteLine($"I'm an animal called {animal1.Name}. I am {animal1.Age} years old and I have {animal1.LimbCount} limbs.");
 
 Console.WriteLine(animal.Eat("Biscuits"));
 Console.WriteLine(animal.Move(8));
