@@ -61,5 +61,10 @@ namespace ZooTzarLibrary
         {
             return $"I'm an animal called {this.Name} using some of my {this.LimbCount} limbs to move {distance} metres.";
         }
+
+        public override string ToString()
+        {
+            return $"I'm an animal called {this.Name}. I am {this.Age} years old and I have {this.LimbCount} limbs.";
+        }
     }
 }
