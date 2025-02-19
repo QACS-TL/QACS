@@ -28,9 +28,34 @@ animals.Add(animal);
 animals.Add(animal1);
 animals.Add(new Animal() { Name = "Bob", Age = 1, LimbCount = 0 });
 
-foreach(Animal ani in animals)
+Elelphant nellie = new Elelphant("Dumbo", 44, 5, 123);
+//nellie.Name = "Nellie";
+//nellie.Age = 72;
+//nellie.LimbCount = 5;
+//nellie.TrunkLength = 134;
+animals.Add(nellie);
+Console.WriteLine(nellie);
+Console.WriteLine(nellie.Trumpet(10));
+Console.WriteLine(nellie.Eat("Bun"));
+
+animals.Add(new Raccoon() { Name="Rocky", Age=1, LimbCount = 3 });
+
+
+foreach (Animal ani in animals)
 {
     Console.WriteLine(ani.Eat("Biscuits"));
+    Console.WriteLine(ani);
+    if (ani is Raccoon)
+    {
+        //Raccoon r = (Raccoon)ani;
+        Console.WriteLine(((Raccoon)ani).Scavenge("Jelly Babies"));
+    }
+    Elelphant e = ani as Elelphant;
+    //if (e != null)
+    //{
+    //    Console.WriteLine(e.Trumpet(9));
+    //}
+    Console.WriteLine(e?.Trumpet(10));
 }
 
 

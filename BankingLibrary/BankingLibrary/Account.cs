@@ -30,16 +30,27 @@
 
         public decimal Credit(decimal amount)
         {
+            if (amount < 0)
+            {
+                throw new Exception("Amount must not be negative!");
+            }
             Balance += amount;
             return Balance;
         }
 
         public decimal Debit(decimal amount)
         {
-            Balance -= amount;
+            if (amount < 0)
+            {
+                throw new Exception("Amount must not be negative!");
+            }
+            if (Balance - amount >= 0)
+            {
+                Balance += amount;
+            }
             return Balance;
-        }
-
-
+        }   
+        
+        override   
     }
 }
