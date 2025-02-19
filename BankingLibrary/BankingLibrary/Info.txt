@@ -1,1 +1,7 @@
-﻿
+﻿//SavingsAccount
+// - Interest Rate (property)
+// - CalculateInterest (method)
+
+//CurrentAccount
+// - OverdraftLimit (property)
+// - Thinkabout Debit Function

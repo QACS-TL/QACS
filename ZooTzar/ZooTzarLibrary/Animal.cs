@@ -2,24 +2,26 @@
 
 namespace ZooTzarLibrary
 {
-    public class Animal
+    public abstract class Animal
     {
 
-        //public Animal():this("Anon")
-        //{
+        public Animal() : this("Anon")
+        {
 
-        //}
+        }
 
-        //public Animal(string name):this(name, 33)
-        //{
+        public Animal(string name) : this(name, 33)
+        {
 
-        //}
+        }
+        public static int AnimalCount { get; private set; }
 
         public Animal(string name="Anon", int age= 33)
         {
             this.Name = name;
             this.Age = age;
             this.LimbCount = 4;
+            AnimalCount++;
         }
 
         //public string name;
@@ -60,10 +62,8 @@ namespace ZooTzarLibrary
 
         private int health;
 
-        public virtual string Eat(string food)
-        {
-            return $"I'm an {this.GetType().Name} called {this.Name} using some of my {this.LimbCount} limbs to eat {food}.";
-        }
+        public abstract string Eat(string food);
+
 
         public string Move(string direction="North", int distance=10)
         {

@@ -2,7 +2,52 @@
 {
     public class Account
     {
-        public string Name { get; set; }
+        public Account() : this("Anon")
+        {
+
+        }
+
+        public Account(string name) : this(name, accountNumber: "XXXXXXXX")
+        {
+
+        }
+
+        public Account(string name, string accountNumber) : this(name, accountNumber, 0)
+        {
+
+        }
+
+        public Account(string name, string accountNumber, decimal balance)
+        {
+            this.Name = name;
+            this.AccountNumber = accountNumber;
+            this.Balance = balance;
+        }
+
+        private List<Account> accounts = new List<Account>();
+
+        public List<Account> Accounts
+        {
+            get { return accounts = new List<Account>(); }
+            set { accounts = value; }
+        }
+
+
+        private string name = "Anonymous";
+
+        public string Name
+        {
+            get { return name; }
+            set
+            {
+                if (name.Length <= 1)
+                {
+                    return;
+                }
+                name = value;
+            }
+        }
+
         private string accountNumber;
         public string AccountNumber
         {
@@ -14,10 +59,10 @@
                 accountNumber = value; 
             }
         }
-        private decimal balance;
-        public decimal Balance
+        protected decimal balance = 0;
+        public virtual decimal Balance
         {
-            get => balance;
+            get { return balance; }
             set
             {
                 if (value < 0)
@@ -38,19 +83,16 @@
             return Balance;
         }
 
-        public decimal Debit(decimal amount)
+        public virtual decimal Debit(decimal amount)
         {
             if (amount < 0)
             {
                 throw new Exception("Amount must not be negative!");
             }
-            if (Balance - amount >= 0)
-            {
-                Balance += amount;
-            }
+            Balance -= amount;
+
             return Balance;
         }   
-        
-        override   
+ 
     }
 }

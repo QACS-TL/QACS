@@ -1,12 +1,12 @@
 ﻿using ZooTzarLibrary;
 
-Animal animal = new Animal();
-Animal animal2 = new Animal("Brian");
+Animal animal = new Elephant("Tina", 43, 4, 112);
+Animal animal2 = new Raccoon( );
 //animal.Name = "Bonzo";
 //animal.Age = 2;
 //animal.LimbCount = -4;
 
-Animal animal1 = new Animal() { Name = "Fifi", Age = 3, LimbCount = 6 };
+Animal animal1 = new Elephant() { Name = "Fifi", Age = 3, LimbCount = 6 };
 //animal1.Name = "Fifi";
 //animal1.Age = 3;
 //animal1.LimbCount = -123;
@@ -26,9 +26,9 @@ Console.WriteLine(animal1.Eat("Cheese"));
 List<Animal> animals = new List<Animal>();
 animals.Add(animal);
 animals.Add(animal1);
-animals.Add(new Animal() { Name = "Bob", Age = 1, LimbCount = 0 });
+animals.Add(new Elephant() { Name = "Bob", Age = 1, LimbCount = 0 });
 
-Elelphant nellie = new Elelphant("Dumbo", 44, 5, 123);
+Elephant nellie = new Elephant("Dumbo", 44, 5, 123);
 //nellie.Name = "Nellie";
 //nellie.Age = 72;
 //nellie.LimbCount = 5;
@@ -50,12 +50,13 @@ foreach (Animal ani in animals)
         //Raccoon r = (Raccoon)ani;
         Console.WriteLine(((Raccoon)ani).Scavenge("Jelly Babies"));
     }
-    Elelphant e = ani as Elelphant;
+    Elephant e = ani as Elephant;
     //if (e != null)
     //{
     //    Console.WriteLine(e.Trumpet(9));
     //}
     Console.WriteLine(e?.Trumpet(10));
+    Console.WriteLine($"There are {Animal.AnimalCount} animals");
 }
 
 
