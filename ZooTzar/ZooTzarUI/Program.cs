@@ -1,9 +1,10 @@
 ﻿using ZooTzarLibrary;
 
 Animal animal = new Animal();
-animal.Name = "Bonzo";
-animal.Age = 2;
-animal.LimbCount = -4;
+Animal animal2 = new Animal("Brian");
+//animal.Name = "Bonzo";
+//animal.Age = 2;
+//animal.LimbCount = -4;
 
 Animal animal1 = new Animal() { Name = "Fifi", Age = 3, LimbCount = 6 };
 //animal1.Name = "Fifi";
@@ -18,8 +19,8 @@ Console.WriteLine(animal1);
 Console.WriteLine("**************************");
 
 Console.WriteLine(animal.Eat("Biscuits"));
-Console.WriteLine(animal.Move(8));
-Console.WriteLine(animal1.Move("North", 10));
+Console.WriteLine(animal.Move(distance:8));
+Console.WriteLine(animal1.Move("South", 5));
 Console.WriteLine(animal1.Eat("Cheese"));
 
 List<Animal> animals = new List<Animal>();
@@ -31,3 +32,5 @@ foreach(Animal ani in animals)
 {
     Console.WriteLine(ani.Eat("Biscuits"));
 }
+
+

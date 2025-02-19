@@ -4,6 +4,24 @@ namespace ZooTzarLibrary
 {
     public class Animal
     {
+
+        public Animal():this("Anon")
+        {
+
+        }
+
+        public Animal(string name):this(name, 33)
+        {
+
+        }
+
+        public Animal(string name, int age)
+        {
+            this.Name = name;
+            this.Age = age;
+            this.LimbCount = 4;
+        }
+
         //public string name;
         public string Name { get; set; }
 
@@ -47,20 +65,20 @@ namespace ZooTzarLibrary
             return $"I'm an animal called {this.Name} using some of my {this.LimbCount} limbs to eat {food}.";
         }
 
-        public string Move(string direction, int distance)
+        public string Move(string direction="North", int distance=10)
         {
             return $"I'm an animal called {this.Name} using some of my {this.LimbCount} limbs to move {direction} for {distance} metres.";
         }
 
-        public string Move(string direction)
-        {
-            return $"I'm an animal called {this.Name} using some of my {this.LimbCount} limbs to move {direction}.";
-        }
+        //public string Move(string direction)
+        //{
+        //    return $"I'm an animal called {this.Name} using some of my {this.LimbCount} limbs to move {direction}.";
+        //}
 
-        public string Move(int distance)
-        {
-            return $"I'm an animal called {this.Name} using some of my {this.LimbCount} limbs to move {distance} metres.";
-        }
+        //public string Move(int distance)
+        //{
+        //    return $"I'm an animal called {this.Name} using some of my {this.LimbCount} limbs to move {distance} metres.";
+        //}
 
         public override string ToString()
         {
