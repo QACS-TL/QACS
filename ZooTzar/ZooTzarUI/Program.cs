@@ -23,7 +23,7 @@ Console.WriteLine(animal.Move(distance:8));
 Console.WriteLine(animal1.Move("South", 5));
 Console.WriteLine(animal1.Eat("Cheese"));
 
-List<Animal> animals = new List<Animal>();
+List<IAnimal> animals = new List<IAnimal>();
 animals.Add(animal);
 animals.Add(animal1);
 animals.Add(new Elephant() { Name = "Bob", Age = 1, LimbCount = 0 });
@@ -40,23 +40,53 @@ Console.WriteLine(nellie.Eat("Bun"));
 
 animals.Add(new Raccoon() { Name="Rocky", Age=1, LimbCount = 3 });
 
+foreach (IAnimal ani in animals)
+{
+    Console.WriteLine(ani);
+}
+
+Console.WriteLine("*************************************");
+animals.Sort();
+
+foreach (IAnimal ani in animals)
+{
+    Console.WriteLine(ani);
+}
+
+Console.WriteLine("*************************************");
+animals.Sort(Animal.IAnimalNameComparer);
 
 foreach (Animal ani in animals)
 {
-    Console.WriteLine(ani.Eat("Biscuits"));
     Console.WriteLine(ani);
-    if (ani is Raccoon)
-    {
-        //Raccoon r = (Raccoon)ani;
-        Console.WriteLine(((Raccoon)ani).Scavenge("Jelly Babies"));
-    }
-    Elephant e = ani as Elephant;
-    //if (e != null)
-    //{
-    //    Console.WriteLine(e.Trumpet(9));
-    //}
-    Console.WriteLine(e?.Trumpet(10));
-    Console.WriteLine($"There are {Animal.AnimalCount} animals");
 }
+
+Console.WriteLine("*************************************");
+animals.Sort(Animal.IAnimalAgeComparer);
+
+foreach (Animal ani in animals)
+{
+    Console.WriteLine(ani);
+}
+
+//foreach (Animal ani in animals)
+//{
+//    Console.WriteLine(ani.Eat("Biscuits"));
+//    Console.WriteLine(ani);
+//    if (ani is Raccoon)
+//    {
+//        //Raccoon r = (Raccoon)ani;
+//        Console.WriteLine(((Raccoon)ani).Scavenge("Jelly Babies"));
+//    }
+//    Elephant e = ani as Elephant;
+//    //if (e != null)
+//    //{
+//    //    Console.WriteLine(e.Trumpet(9));
+//    //}
+//    Console.WriteLine(e?.Trumpet(10));
+//    Console.WriteLine($"There are {Animal.AnimalCount} animals");
+
+
+//}
 
 
